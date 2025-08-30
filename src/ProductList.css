@@ -41,6 +41,13 @@ body {
 
 }
 
+.category {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* Product Grid */
 .product-grid {
     display: flex;
@@ -161,6 +168,10 @@ body {
     width: 70px;
     border-radius: 70%;
 
+}
+
+.brand {
+    margin-left: 15px;
 }
 
 .luxury {
