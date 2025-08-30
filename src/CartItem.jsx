@@ -26,7 +26,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleCheckoutShopping = (e) => {
-    alert('Functionality to be added for future reference');
+    alert('Coming Soon');
   };
 
   const handleIncrement = (item) => {
@@ -56,9 +56,13 @@ const CartItem = ({ onContinueShopping }) => {
     return cost * item.quantity;
   };
 
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalCartQuantity = cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
+
   return (
     <div className="cart-container">
-      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
+      {/* <h2 style={{ color: 'black' }}>Total Cart Plants: {totalCartQuantity}</h2>
+      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2> */}
       <div>
         {cart.map(item => (
           <div className="cart-item" key={item.name}>
@@ -77,7 +81,9 @@ const CartItem = ({ onContinueShopping }) => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'></div>
+      <h2 style={{ color: 'black' }}>Total Cart Plants: {totalCartQuantity}</h2>
+      <h2 style={{ color: 'black' }}>Total Cart Amount: ${calculateTotalAmount()}</h2>
+      {/* <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'>${calculateTotalAmount()}</div> */}
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
